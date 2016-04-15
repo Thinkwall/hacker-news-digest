@@ -149,7 +149,10 @@
         |
         <li><a href="/startupnews">Startup News+</a></li>
         |
-        <li><a href="{{ url_for('feed', site=site) }}">RSS</a></li>
+        <li><a href="{{ url_for('feed', site=site) }}" data-toggle="tooltip"
+               title="Add a parameter <code>gte</code> to filter for greater or equal scores,
+               <br/>e.g., <code>{{ url_for('feed', site=site) }}?gte=200</code> will extract news
+               whose score is greater or equal than 200">RSS</a></li>
         |
         <li><a href="https://github.com/polyrabbit/hacker-news-digest" title="Fork me on GitHub" target="_blank">GitHub</a></li>
         |
@@ -199,6 +202,7 @@
         scrollTrigger: '<i class="fa fa-chevron-circle-up fa-3x" id="scrollUp"></i>',
         scrollTitle: 'Scroll to top'
     });
+    $('[data-toggle="tooltip"]').tooltip({html: true});
 </script>
 
 <script>
